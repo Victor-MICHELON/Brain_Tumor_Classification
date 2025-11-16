@@ -5,7 +5,7 @@ The project compares a **custom CNN baseline** with a **fine-tuned EfficientNetB
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 - [Overview](#overview)
 - [Problem Statement](#problem-statement)
 - [Dataset](#dataset)
@@ -28,24 +28,25 @@ This project achieves **98% test accuracy** on brain tumor MRI classification wh
 
 ---
 
-## 🎯 Problem Statement 
+## Problem Statement 
 
 Brain tumors present differently across MRI scans, and early detection significantly improves patient outcomes. This project aims to build an intelligent system capable of recognizing four major diagnostic categories—glioma, meningioma, pituitary tumors, and healthy (no tumor).
 By leveraging end-to-end data preprocessing, optimized data augmentation strategies, and the development of both a custom CNN and a transfer-learning model based on EfficientNetB0, the system learns to identify subtle patterns in MRI images that may not be visible to the naked eye. Grad-CAM heatmaps highlight the regions that most influence the prediction, making the model’s decisions more interpretable. The goal is to bring machine learning closer to real-world medical decision-support systems.
 
 ---
 
-## 🗂️ Dataset
+## Dataset
 
-[Brain Tumor Dataset](https://www.kaggle.com/datasets/indk214/brain-tumor-dataset-segmentation-and-classification) containing thousands of MRI slices organized into four classes.
+[Brain Tumor Dataset](https://www.kaggle.com/datasets/indk214/brain-tumor-dataset-segmentation-and-classification) containing labeled brain MRI images grouped into four main categories. Images present variations in acquisition quality, brightness, orientation, and anatomical details
 
-- **Total images:** ~7,000  
-- **Classes:** 4  
+- **Total MRI scans:** 5712 (Train set) & 1311 (Test set)
+- **Classes:** Glioma, Meningioma, Pituitary Tumor, No Tumor
+- Data type: Grayscale or RGB MRI axial slices (JPG/PNG)
 - **Splits:** train / test
   
 ---
 
-## 🔬 Methodology
+## Methodology
 
 Two modeling strategies were implemented to compare feature learning capabilities:
 
@@ -78,7 +79,7 @@ Transfer Learning delivers superior generalization and faster convergence.
 
 ---
 
-## 📊 Results & Performance
+## Results & Performance
 
 ### **Custom CNN**  
 **Accuracy:** 91.61%
@@ -90,7 +91,7 @@ The Transfer Learning model significantly outperforms the baseline across all me
 
 ---
 
-## 💡 Explainability with Grad-CAM
+## Explainability with Grad-CAM
 
 Grad-CAM visualizations validate the model's reasoning by highlighting the regions influencing its predictions.
 
@@ -115,7 +116,7 @@ These results confirm that the model bases decisions on **meaningful tumor struc
 
 ---
 
-## ⚠️ Limitations & Future Work
+## Limitations & Future Work
 
 1. **Classification, not segmentation:**  
    The model predicts tumor categories but does not localize tumors pixel-wise.
@@ -128,7 +129,7 @@ These results confirm that the model bases decisions on **meaningful tumor struc
 
 ---
 
-## 🛠️ Technologies
+## Technologies
 
 Python, NumPy, Pandas
 
@@ -141,3 +142,12 @@ Scikit-learn
 Matplotlib, Seaborn
 
 Grad-CAM (custom implementation)
+
+---
+
+## 👤 Author
+
+**Victor MICHELON**  
+Data Science & Engineering Student  
+🔗 [Portfolio](https://victor-michelon.github.io/Victor_MICHELON_Portfolio.github.io/)
+
