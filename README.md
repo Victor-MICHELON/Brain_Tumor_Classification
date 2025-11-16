@@ -26,30 +26,23 @@ The project compares a **custom CNN baseline** with a **fine-tuned EfficientNetB
 In medical imaging, accuracy alone is not sufficient — model decisions must be **transparent and trustworthy**.  
 This project achieves **98% test accuracy** on brain tumor MRI classification while providing **explainability guarantees** through XAI techniques.
 
-Grad-CAM heatmaps demonstrate that the model relies on **clinically relevant tumor regions**, not background artifacts.
-
 ---
 
-## 🎯 Problem Statement
+## 🎯 Problem Statement 
 
-Build a computer vision model capable of **4-class classification**:
-
-- **glioma**
-- **meningioma**
-- **pituitary**
-- **no tumor**
+Brain tumors present differently across MRI scans, and early detection significantly improves patient outcomes. This project aims to build an intelligent system capable of recognizing four major diagnostic categories—glioma, meningioma, pituitary tumors, and healthy (no tumor).
+By leveraging end-to-end data preprocessing, optimized data augmentation strategies, and the development of both a custom CNN and a transfer-learning model based on EfficientNetB0, the system learns to identify subtle patterns in MRI images that may not be visible to the naked eye. Grad-CAM heatmaps highlight the regions that most influence the prediction, making the model’s decisions more interpretable. The goal is to bring machine learning closer to real-world medical decision-support systems.
 
 ---
 
 ## 🗂️ Dataset
 
-The project uses a public Brain Tumor MRI dataset (e.g., Kaggle), containing thousands of MRI slices organized into four classes.
+[Brain Tumor Dataset](https://www.kaggle.com/datasets/indk214/brain-tumor-dataset-segmentation-and-classification) containing thousands of MRI slices organized into four classes.
 
 - **Total images:** ~7,000  
 - **Classes:** 4  
-- **Splits:** train / validation / test  
-- **Preprocessing:** resizing, normalization, data augmentation
-
+- **Splits:** train / test
+  
 ---
 
 ## 🔬 Methodology
@@ -101,10 +94,21 @@ The Transfer Learning model significantly outperforms the baseline across all me
 
 Grad-CAM visualizations validate the model's reasoning by highlighting the regions influencing its predictions.
 
-| Glioma | Meningioma | Pituitary |
-|:------:|:----------:|:---------:|
-| ![Glioma](YOUR_GLIOMA_GRADCAM_URL) | ![Meningioma](YOUR_MENINGIOMA_GRADCAM_URL) | ![Pituitary](YOUR_PITUITARY_GRADCAM_URL) |
-| *Diffuse activation over glioma mass* | *Focus on meningioma contours* | *Localized activation on pituitary tumor* |
+<table>
+  <tr>
+    <th>Glioma</th>
+    <th>Meningioma</th>
+    <th>Pituitary</th>
+    <th>No Tumor</th>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/Victor-MICHELON/Brain_Tumor_Classification/blob/main/images/gioma.png" width="200"></td>
+    <td><img src="https://github.com/Victor-MICHELON/Brain_Tumor_Classification/blob/main/images/meningiomia.png" width="200"></td>
+    <td><img src="https://github.com/Victor-MICHELON/Brain_Tumor_Classification/blob/main/images/pituitary.png" width="200"></td>
+    <td><img src="https://github.com/Victor-MICHELON/Brain_Tumor_Classification/blob/main/images/notumor.png" width="200"></td>
+  </tr>
+</table>
+
 
 
 These results confirm that the model bases decisions on **meaningful tumor structures**, not dataset biases.
@@ -124,15 +128,16 @@ These results confirm that the model bases decisions on **meaningful tumor struc
 
 ---
 
-## ⚙️ Installation
+## 🛠️ Technologies
 
-```bash
-# Clone the repository
-git clone https://github.com/YourUsername/YourRepo.git
-cd YourRepo
+Python, NumPy, Pandas
 
-# Install dependencies
-pip install -r requirements.txt
+TensorFlow / Keras
 
-# Run the notebook
-jupyter notebook "Brain Tumor Classification.ipynb"
+EfficientNetB0
+
+Scikit-learn
+
+Matplotlib, Seaborn
+
+Grad-CAM (custom implementation)
