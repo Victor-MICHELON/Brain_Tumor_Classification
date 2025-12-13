@@ -5,22 +5,6 @@ The project compares a **custom CNN baseline** with a **fine-tuned EfficientNetB
 
 ---
 
-## Table of Contents
-- [Overview](#overview)
-- [Problem Statement](#problem-statement)
-- [Dataset](#dataset)
-- [Methodology](#methodology)
-  - [Baseline: Custom CNN](#baseline-custom-cnn)
-  - [Advanced: Transfer Learning](#advanced-transfer-learning)
-- [Results & Performance](#results--performance)
-- [Explainability with Grad-CAM](#explainability-with-grad-cam)
-- [Limitations & Future Work](#limitations--future-work)
-- [Installation](#installation)
-- [Technologies](#technologies)
-- [License](#license)
-
----
-
 ## 🔭 Overview
 
 In medical imaging, accuracy alone is not sufficient — model decisions must be **transparent and trustworthy**.  
